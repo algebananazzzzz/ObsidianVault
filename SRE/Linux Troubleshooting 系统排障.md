@@ -4,9 +4,6 @@
 # Linux commands
 
 1. From `vmstat`, we can immediately determine the rough constraints before drilling down
-   
-   在操作系统里，我会先用 `vmstat` 来快速判断乃一个资源被限制，其次再进一步深入排查。
-   `vmstat` command 非常好用...同时看到 CPU、内存、I/O、进程的状态，非常核心的工具
 
 | procs            | memory                    | swap        | io            | system                    | cpu                                      |
 | ---------------- | ------------------------- | ----------- | ------------- | ------------------------- | ---------------------------------------- |

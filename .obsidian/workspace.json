@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SRE/History of Usenet.md",
+                "file": "SRE/Resume deep dive.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "History of Usenet"
+              "title": "Resume deep dive"
             }
           }
         ]
@@ -173,20 +173,20 @@
   },
   "active": "0ee6ffcb3e8b0f82",
   "lastOpenFiles": [
-    "SRE/Service Discovery.md",
-    "SRE/History of Usenet.md",
     "SRE/System Design.md",
-    "SRE/Process vs Thread vs Coroutine.md",
+    "SRE/Service Discovery.md",
     "SRE/Resume deep dive.md",
+    "SRE/Networking.md",
+    "SRE/Process vs Thread vs Coroutine.md",
+    "SRE/Linux Troubleshooting 系统排障.md",
+    "SRE/History of Usenet.md",
     "SRE/AWS Networking.md",
+    "SRE/gRPC.md",
     "Kubernetes/Cheatsheet.md",
     "Kubernetes/Ingress and Services.md",
     "Kubernetes/Logging & Monitoring.md",
     "Kubernetes/Scheduling, Taints & Labels, Resource.md",
-    "SRE/Linux Troubleshooting 系统排障.md",
-    "SRE/Networking.md",
     "SRE/Tencent Cloud Shenzheng.md",
-    "SRE/gRPC.md",
     "Kubernetes/diagrams/Architecture.svg",
     "Kubernetes/K8s Architecture.md",
     "Diagram.svg.xml",

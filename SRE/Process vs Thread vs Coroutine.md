@@ -1,11 +1,11 @@
-Imagine a school where the **CPU** is like the **Teacher**. All the student are extremely lazy, they will sleep if the teacher is not teaching them. There can be **multiple teachers (CPU cores)**.
+Imagine a 
 # Process
-Creating a **Process** is like opening a **new class**. 
+**Process = Cubicle**
 
-| Analogy                                                        | Mapping                                                                                                                                             |
-| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **High Setup Cost:** setup lesson plan, pr                     | The kernel has to create a new `task_struct`, a new `mm_struct` (virtual memory map) and a new `files_struct` (file descriptors: files and net **Independence and Security:** classes does not affect e.o. ct  ct  ct  | Unique address space: one process cannot override another process's data                                                                            |
-
+| Analogy                                                 | Mapping                                                                                                                          | Significance                                                      |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Each cubicle has its own dedicated toilet, toilet paper | The kernel has to create a new `task_struct`, a new `mm_struct` (virtual memory map) and a new `files_struct` (file descriptors) | **Independence and Security:** processes do not affect each other |
+**Problem:** when the next person goes into the toilet, he needs to 
 # Thread
 A **Thread** is a **Table** inside that class.
 

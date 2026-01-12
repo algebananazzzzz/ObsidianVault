@@ -6,7 +6,6 @@ Imagine having 2 microservices running in different machines. How do they commun
 1. Called by a function call
 2. Serialize request
 3. Send over network
-
 ## RPC vs REST
 
 1. Higher throughput by using binary instead of JSON, reduce overhead and parsing load
