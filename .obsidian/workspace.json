@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9fdcb52283b08272",
+        "id": "c3e134b34d63fea5",
         "type": "tabs",
         "children": [
           {
-            "id": "0ee6ffcb3e8b0f82",
+            "id": "3beeb4d19bc93376",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SRE/Resume deep dive.md",
+                "file": "SRE/gRPC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Resume deep dive"
+              "title": "gRPC"
             }
           }
         ]
@@ -171,17 +171,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "0ee6ffcb3e8b0f82",
+  "active": "3beeb4d19bc93376",
   "lastOpenFiles": [
-    "SRE/System Design.md",
-    "SRE/Service Discovery.md",
-    "SRE/Resume deep dive.md",
+    "SRE/Virtual Machine vs Docker.md",
+    "SRE/Linux Troubleshooting 系统排障.md",
+    "SRE/gRPC.md",
+    "SRE/AWS Networking.md",
+    "Service Discovery.md",
+    "System Design.md",
+    "History of Usenet.md",
     "SRE/Networking.md",
     "SRE/Process vs Thread vs Coroutine.md",
-    "SRE/Linux Troubleshooting 系统排障.md",
-    "SRE/History of Usenet.md",
-    "SRE/AWS Networking.md",
-    "SRE/gRPC.md",
+    "Resume deep dive.md",
+    "Diagram 1.svg.xml",
+    "Diagram 1.svg",
     "Kubernetes/Cheatsheet.md",
     "Kubernetes/Ingress and Services.md",
     "Kubernetes/Logging & Monitoring.md",
@@ -218,9 +221,6 @@
     "canvas-export.html",
     "Untitled 2.base",
     "CS2105/Link Layer/images/ALOHA collision.svg",
-    "CS2105/Network Layer/Network Layer.md",
-    "AI Stuff",
-    "SRE/images/System Design.png",
     "Untitled 1.canvas"
   ]
 }

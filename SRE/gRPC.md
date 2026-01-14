@@ -11,9 +11,17 @@ Imagine having 2 microservices running in different machines. How do they commun
 1. Higher throughput by using binary instead of JSON, reduce overhead and parsing load
 2. Streaming 
 
-| Business Requirement | RPC                            | REST                |
-| -------------------- | ------------------------------ | ------------------- |
-| High throughput      | Binary protobufs (10x smaller) | JSON large overhead |
-| Low latency          |                                |                     |
-| Type safe (contract) | Define proto files             |                     |
-| Streaming            |                                |                     |
+| Aspect            | REST (HTTP/1.1 or HTTP/2)     | gRPC (HTTP/2)                    | WebSocket             |
+| ----------------- | ----------------------------- | -------------------------------- | --------------------- |
+| Data format       | JSON (usually)                | Protobuf (binary)                | Any (text/binary)     |
+| Typing            | Weak (JSON, schema optional)  | Strong (proto schema)            | None by default       |
+| Performance       | Slower (text, bigger payload) | Very fast (binary, multiplexed)  | Fast, but app-defined |
+| Streaming         | Limited (workarounds)         | Built-in streaming               | Built-in full duplex  |
+| Tooling           | Huge ecosystem                | Strong codegen                   | Manual handling       |
+| Browser support   | Native                        | Needs proxy (gRPC-Web)           | Native                |
+| Human readable    | Yes                           | No                               | Depends on format     |
+| Versioning        | Manual (URLs, headers)        | Built into proto                 | Manual                |
+| Error handling    | HTTP codes + body             | gRPC status codes                | App-defined           |
+| Typical use       | Public APIs, CRUD             | Internal services, microservices | Realtime apps         |
+| Firewall friendly | Very                          | Mostly                           | Sometimes blocked     |
+| Learning curve    | Low                           | Medium                           | Medium                |
