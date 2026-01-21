@@ -20,7 +20,7 @@ Network layer provides **best effort delivery** i.e. packets may be dropped, reo
 
 However, we do not need TCP to guarantee delivery, order etc.
 - My personal belief is that managing these concerns in the application layer provides more control to the application. 
-- QUIC is a good example of this. It runs using UDP, but reintroduces the TCP guarantees in user space. A benefit of QUIC over TCP is the elimination of HOL blocking.
+- QUIC is a good example of this. It runs  using UDP, but reintroduces the TCP guarantees in user space. A benefit of QUIC over TCP is the elimination of HOL blocking.
 ### 3. Load Balancer
 Problem: 
 - Memory overloaded in handling concurrent connections (factor of 100x after `accept` call) 

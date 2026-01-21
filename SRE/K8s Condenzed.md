@@ -1,3 +1,20 @@
+### Controlplane
+
+![[Architecture.svg]]
+
+| Component              | Main job                                                                                                                                                                                       |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| kube-apiserver         | Central point of communication from all users, developers, components<br>- Ensures all requests conform to k8s schema and authorization policies<br>- **Only point** of connection to **etcd** |
+| etcd                   | Distributed key-value store<br>- Stores configuration data and cluster's current state<br>- Highly available and fault tolerant                                                                |
+| controllers<br>        | kube-scheduler: Schedules pods onto worker nodes<br>kube-controller-manager: built-in resources (Deployment, Node, Job, etc.)                                                                  |
+| other controllers <br> | CoreOS ALB ingress controller                                                                                                                                                                  |
+| kubelet                | Runs Pods, talks to container runtime, reports status                                                                                                                                          |
+| kube-proxy             | Setup iptables for Service networking                                                                                                                                                          |
+| CNI plugin             | Routing between pods (AWS CNI, Calico iptables, Cilium eBPF)                                                                                                                                   |
+| CoreDNS                | Service and Pod DNS                                                                                                                                                                            |
+| metrics-server         | Provides CPU/memory metrics for HPA                                                                                                                                                            |
+| Operators              | Manage apps via CRDs                                                                                                                                                                           |
+
 ### Resource Lifecycle
 
 `kubectl apply` → API server → Authentication & Authorization → Admission Controller → `etcd`
@@ -41,8 +58,9 @@ If resources are insufficient, scheduler considers preemption by
 | **BestEffort** | No resource requests or limits are set for any container.                            | Highest           |
 ## Controller vs Operator
 
-**Simple answer:** CRD + domain knowledge + controller
-My personal requirement for declarative state management is stricter 
+**Simple answer:** 
+- **Controller:** single control loop (e.g. scheduler controller manages `spec.nodeName`)
+- **Operator:** Manages a full lifecycle of an application i.e. encapsulates domain knowledge
 
 | **Citizen type**      | **Examples**                        | **Intuition**                                                                                                                                                                                                |
 | --------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -58,3 +76,26 @@ My personal requirement for declarative state management is stricter
 
 ## Networking
 
+**Data Plane**
+
+| Model           | Core idea                 | Route                                | Key mechanism                                     |
+| --------------- | ------------------------- | ------------------------------------ | ------------------------------------------------- |
+| **AWS VPC CNI** | Pod IP = real VPC IP      | Pod → ENI → VPC router → ENI → Pod   | Pod request VPC IP from node's ENI IP pool        |
+| **Overlay CNI** | Pod IP = cluster-only IP  | Pod → bridge → tunnel → bridge → Pod | Encapsulate pod packets in node packets in bridge |
+| **Routed CNI**  | Pod IP = real routable IP | Pod → NIC → real network → NIC → Pod | Network routes pod subnets (BGP/static)           |
+**Linkerd:** sidecar proxy takes over traffic, use mTLS, does retries, collects metrics
+
+**Control Plane**
+
+1. **Services**
+   kube-proxy decides:
+	   - Service 10.96.0.10 → Pod A, Pod B
+	   - Writes iptables rules or eBPF maps
+2. Routed CNI (BGP)
+	- Calico BGP daemon advertises:
+    - “10.50.1.0/24 via NodeA”
+3. Network policy
+	   - Reads NetworkPolicy:
+	- “Pod A can talk to Pod B on port 80”
+	- Programs iptables or eBPF rules
+**Linkerd:** controller pushes config to proxies 

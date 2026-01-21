@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SRE/K8s Condenzed.md",
+                "file": "SRE/Networking (google.com).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "K8s Condenzed"
+              "title": "Networking (google.com)"
             }
           }
         ]
@@ -173,9 +173,11 @@
   },
   "active": "5a82625ea0bbfb90",
   "lastOpenFiles": [
-    "Kubernetes/Scheduling, Taints & Labels, Resource.md",
-    "Kubernetes/K8s Architecture.md",
     "SRE/K8s Condenzed.md",
+    "SRE/Networking (google.com).md",
+    "Resume deep dive.md",
+    "Kubernetes/K8s Architecture.md",
+    "Kubernetes/Scheduling, Taints & Labels, Resource.md",
     "Kubernetes/Logging & Monitoring.md",
     "SRE/Golang.md",
     "SRE/Process vs Thread vs Coroutine.md",
@@ -186,9 +188,7 @@
     "SRE/images/Diagram 1.svg",
     "SRE/images/Diagram 2.svg",
     "SRE/images/Diagram 2.svg.xml",
-    "Resume deep dive.md",
     "History of Usenet.md",
-    "SRE/Networking.md",
     "SRE/gRPC.md",
     "SRE/AWS Networking.md",
     "System Design.md",
