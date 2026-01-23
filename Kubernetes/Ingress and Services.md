@@ -4,7 +4,7 @@
 
 ## Services
 
-![[Diagram.svg]]
+![[Kubernetes/diagrams/Diagram.svg]]
 
 | Service Type   | ClusterIP (default)                            | NodePort                                           | LoadBalancer                                      |
 | -------------- | ---------------------------------------------- | -------------------------------------------------- | ------------------------------------------------- |

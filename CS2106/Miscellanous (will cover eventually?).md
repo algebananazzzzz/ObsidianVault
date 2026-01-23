@@ -10,7 +10,7 @@ Key properties:
 If the TLB is wrong, the CPU will:
 - Allow writes that should fault
 - Map to wrong physical memory
- ![[Diagram.svg]]
+ ![[CS2106/assets/Diagram.svg]]
 
 **Refcount** is a **kernel-maintained counter** attached to a **physical memory page** that records **how many page-table entries (across all processes) currently map to that same physical page**.
 - Stored in struct page[] allocated on boot
