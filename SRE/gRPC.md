@@ -25,3 +25,4 @@ Imagine having 2 microservices running in different machines. How do they commun
 | Typical use       | Public APIs, CRUD             | Internal services, microservices | Realtime apps         |
 | Firewall friendly | Very                          | Mostly                           | Sometimes blocked     |
 | Learning curve    | Low                           | Medium                           | Medium                |
+|                   |                               |                                  |                       |
