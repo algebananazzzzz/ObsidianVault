@@ -1,5 +1,5 @@
 ### Fork
-Duplicates the address-space structure
+Duplicates the address-space structure. Useful when child is cooperating with parent / relies upon parent data
 
 **Workflow:**
 Userspace: `fork()` syscall
