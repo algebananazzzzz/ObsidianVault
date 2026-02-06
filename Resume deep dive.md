@@ -35,3 +35,4 @@
 | -------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
 | Home Labbing   | Love retro technology like usenet, understanding the history is important for appreciation | Setup K3s on a VM with Usenet services like radarr, sonarr, lidarr, used Tailscale to setup SD wan |
 | Small projects | Use Odyssey Framework to create small projects like LangChain + LangGraph BeerBuddy        | AWS                                                                                                |
+
