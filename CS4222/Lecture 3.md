@@ -13,30 +13,14 @@ $$
 |**dBm**|Absolute power (referenced to 1 mW)|Absolute|
 |**dBi**|Antenna gain relative to isotropic|Ratio
 **Allowed**
-1. dBm + dB (Adjusting Power)
-   **Meaning:**  Apply gain or loss to an absolute power.
+1. **dBm + dB:** Apply gain or loss to an absolute power.
    $P_{out}=$Transmitter power (dBm) - Cable loss (dB)
-2. dBm + dBi (EIRP Calculation)
-   **Meaning:** Apply antenna gain to transmit power.
-   $EIRP=$Transmit power (dBm) + Antenna gain (dBi)
+2. **dBm + dBi:** Apply antenna gain to transmit power.
+   **EIRP** = Transmit power (dBm) + Antenna gain (dBi)
 - dBi + dBi (Combining Antenna Gains):  $G_{tx}+G_{rx}$
-- dBm − dBm (Comparing Power Levels)
+- dBm + dBm:
+  **Link margin** = Received power - Receiver sensitivity
   
 **Not Allowed**
 - dBm + dBm (both are log scale)
 - dBi + dBm (adding ratio to absolute value)
-
-## Free Space Path Loss (FSPL)
-
-The **minimum possible signal loss** when:
-- No obstacles
-- No reflections
-- No absorption
-- Perfect line-of-sight
-
-It comes purely from **energy spreading over a sphere**.
-
-$$
-$$
-
-
