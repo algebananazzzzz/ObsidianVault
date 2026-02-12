@@ -7,7 +7,7 @@ Where:
 - n = problem size
 - p = number of processing units
 
-### Speedup
+#### Speedup
 Ratio of how fast the parallel program runs compared to the best sequential version.
 $$S_{p}(n)=T_{*}(n) / T_{p}(n)$$
 **Superlinear Speedup**
@@ -16,18 +16,17 @@ Sometimes speedup exceeds the number of processors. This may occur due to:
 - Reduced memory contention
 - Better branch prediction behavior
 
-### Cost
+#### Cost
 Total amount of work performed by all processors combined.
 $$C_{p}(n)=p \times T_{p}(n)$$
 A parallel algorithm is **cost-optimal** if it performs the same total work as the fastest sequential algorithm.
 
-### Efficiency
+#### Efficiency
 Efficiency measures how well the processors are utilized.
 $$E_{p}(n)=S_{p}(n) / p = )=T_{*}(n) / C_{p}(n)$$
 - $E_{p}(n) = 1$ → perfect linear speedup
 - $E_{p}(n) < 1$ → some overhead or idle time
 - $E_{p}(n) > 1$  → superlinear speedup
-
 
 ## Amdahl’s Law (1967)
 **Speedup of parallel execution is limited by the sequential fraction of the code** ( f ).
@@ -74,3 +73,13 @@ $$Time_{user}(A)=N_{cycle}(A) \times Time_{cycle}$$
 | $N_{cycle}(A)$   | Total number of CPU cycles required for all instructions |
 | $Time_{cycle}$   | 1 / CPU clock cycle frequency                            |
 **V2**
+
+## Amdahl's Law
+Speedup of parallel execution is limited by the sequential fraction of the code (parts that cannot be paralleized)
+f (0 <= f <= 1) sequential fraction
+fixed workload performance
+
+Sequential execution time:
+$$T_{seq} = f \times T_{*}(n)$$
+Parallel execution time:
+$$T_{par} = (1-f) \times T_{*}(n)$$
