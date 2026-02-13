@@ -23,7 +23,7 @@ A parallel algorithm is **cost-optimal** if it performs the same total work as t
 
 #### Efficiency
 Efficiency measures how well the processors are utilized.
-$$E_{p}(n)=S_{p}(n) / p = )=T_{*}(n) / C_{p}(n)$$
+$$E_{p}(n)=S_{p}(n) / p=T_{*}(n) / C_{p}(n)$$
 - $E_{p}(n) = 1$ → perfect linear speedup
 - $E_{p}(n) < 1$ → some overhead or idle time
 - $E_{p}(n) > 1$  → superlinear speedup
