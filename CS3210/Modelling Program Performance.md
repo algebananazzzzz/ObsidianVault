@@ -65,21 +65,44 @@ $$S_{p}(n)=f' + (1-f')p$$
 - **Gustafson:** serial fraction is 0 if problem is large enough
 - How about memory bottleneck, communication between processors etc.?
 ## User CPU Time
-**V1**
-$$Time_{user}(A)=N_{cycle}(A) \times Time_{cycle}$$
+Can be modeled with the sum of these components
+$$
+\mathrm{Time}_{\mathrm{user}}(A)=(\text{sum of components})\times \mathrm{Time}_{\mathrm{avg\_cycle}}
+$$
+### 1. Instruction Time
+$$
+N_{\mathrm{instr}}(A)\times \mathrm{CPI}(A)\times \mathrm{Time}_{\mathrm{avg\_cycle}}
+$$
 
-| $Time_{user}(A)$ | User CPU time of program A                               |
-| ---------------- | -------------------------------------------------------- |
-| $N_{cycle}(A)$   | Total number of CPU cycles required for all instructions |
-| $Time_{cycle}$   | 1 / CPU clock cycle frequency                            |
-**V2**
+| Term                                  | Meaning                                                                                           |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| $N_{\mathrm{instr}}(A)$               | Total number of instructions in program A *(architecture and compiler dependent)*                 |
+| $\mathrm{CPI}(A)$                     | Average cycles per instruction of all instructions in program A *(mostly architecture dependent)* |
+| $\mathrm{Time}_{\mathrm{avg\_cycle}}$ | Average time per CPU cycle *(1 / average CPU frequency)*                                          |
 
-## Amdahl's Law
-Speedup of parallel execution is limited by the sequential fraction of the code (parts that cannot be paralleized)
-f (0 <= f <= 1) sequential fraction
-fixed workload performance
+### 2. Average Memory Access Time
+$$
+N_{\text{rw\_ops}}(A)\times R_{\text{miss\_rate}}
+$$
+$$
+T_{\text{read\_access}}(A)=T^{L1}_{\text{read\_hit}}(A)+\left(R^{L1}_{\text{read\_miss\_rate}}(A)\times T^{L1}_{\text{read\_miss}}(A)\right)
+$$
+Continuing on,
+$$
+T^{L1}_{\text{read\_miss}}(A)=T^{L2}_{\text{read\_hit}}(A)+\left(R^{L2}_{\text{read\_miss\_rate}}(A)\times T^{L2}_{\text{read\_miss}}(A)\right)
+$$
+Global miss rate:
+$$
+\text{Global miss rate}=R^{L1}_{\text{read\_miss\_rate}}(A)\times R^{L2}_{\text{read\_miss\_rate}}(A)
+$$
 
-Sequential execution time:
-$$T_{seq} = f \times T_{*}(n)$$
-Parallel execution time:
-$$T_{par} = (1-f) \times T_{*}(n)$$
+### Throughput
+
+| Metric             | Formula                                              | Meaning                                      | Notes                                          |
+| ------------------ | ---------------------------------------------------- | -------------------------------------------- | ---------------------------------------------- |
+| MIPS<br>(BogoMIPS) | Clock Rate / (CPI × 10⁶)                             | Million Instructions Per Second              | Depends on instruction set, easy to manipulate |
+| MFLOPS             | Floating point instructions / (Execution Time × 10⁶) | Million Floating Point Operations Per Second | Standardize to FP64/32                         |
+**Roofline Model**
+$\mathrm{Arithmetic\ Intensity}=\frac{\mathrm{Number\ of\ FLOP\ instructions}}{\mathrm{Amount\ of\ data\ moved\ (bytes)}}$
+High arithmetic intensity → compute bound
+Low arithmetic intensity → memory bound
