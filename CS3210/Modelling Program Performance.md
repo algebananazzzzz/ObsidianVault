@@ -102,7 +102,17 @@ $$
 | ------------------ | ---------------------------------------------------- | -------------------------------------------- | ---------------------------------------------- |
 | MIPS<br>(BogoMIPS) | Clock Rate / (CPI × 10⁶)                             | Million Instructions Per Second              | Depends on instruction set, easy to manipulate |
 | MFLOPS             | Floating point instructions / (Execution Time × 10⁶) | Million Floating Point Operations Per Second | Standardize to FP64/32                         |
-**Roofline Model**
+**Roofline Model (Contention)**
 $\mathrm{Arithmetic\ Intensity}=\frac{\mathrm{Number\ of\ FLOP\ instructions}}{\mathrm{Amount\ of\ data\ moved\ (bytes)}}$
 High arithmetic intensity → compute bound
 Low arithmetic intensity → memory bound
+
+**Solutions**
+1. **Exploit Temporal Locality**  
+	- Co-locate tasks that reuse the same data.  
+	- Schedule threads that operate on the same data structure **close in time** and preferably on the **same core / socket** to maximize cache reuse (warm caches).  
+
+2. **Exploit Spatial Locality**  
+- Split / tile work so threads touch data that is **contiguous in memory** (better cache-line utilization).  
+- Use **padding / alignment** to avoid false sharing when multiple threads update nearby fields.
+
