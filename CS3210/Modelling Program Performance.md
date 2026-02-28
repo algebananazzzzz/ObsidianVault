@@ -7,6 +7,7 @@ Where:
 - n = problem size
 - p = number of processing units
 
+$$\text{Maximum Degree of Concurrency}=\frac{\text{Total\ Work}}{\text{Critical\ Path\ Length}}$$
 #### Speedup
 Ratio of how fast the parallel program runs compared to the best sequential version.
 $$S_{p}(n)=T_{*}(n) / T_{p}(n)$$

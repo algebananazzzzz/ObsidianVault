@@ -56,7 +56,7 @@ Relaxed Consistency
 | W → W           | ✅                      | ✅                    | ✅                     | ❌                      |
 | Write Atomicity | ✅                      | ✅                    | ❌                     | ✅                      |
 **Total Store Ordering**
-Store enters store buffer, load executes immediately (before store is globally visible)
+Write enters store buffer, load executes immediately (before write is globally visible)
 
 | Operation             | Behaviour                                                                           |
 | --------------------- | ----------------------------------------------------------------------------------- |
