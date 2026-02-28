@@ -4,7 +4,7 @@
 | Analogy                                                     | Mapping                                                                                                                          | Significance                                                      |
 | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | Each cubicle has its own privacy and dedicated toilet paper | The kernel has to create a new `task_struct`, a new `mm_struct` (virtual memory map) and a new `files_struct` (file descriptors) | **Independence and Security:** processes do not affect each other |
-![[Diagram 1.svg]]
+![[SRE/images/Diagram 1.svg]]
 
 **Problem:** 
 1. **Cannot run multiple tasks at the same time:** multiple CPU cores, process only utilizes one
