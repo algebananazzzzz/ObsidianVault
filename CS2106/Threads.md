@@ -16,6 +16,10 @@ Processes are expensive because:
 
 ![[CS2106/assets/Diagram 1.svg]]
 
-Simultaneous multi-threading: allow threads to run natively and parallel on same core
-e.g. Intel Hyperthreading
+**Simultaneous multi-threading**
+It makes **1 physical core appear as 2 logical cores** to run multiple threads in **parallel**.
+- CPU duplicates **thread_struct** (registers, program counter, thread state)
+- But shares **hardware** (ALU, cache)
+- **Without hyperthreading:** compute → wait memory → compute → wait
+- **With hyperthreading:** compute a → compute b while waiting memory a
 
