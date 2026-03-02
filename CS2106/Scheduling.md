@@ -27,7 +27,7 @@ SJF exponential average:
 
 
 ### Interactive environment
-- Timer interrupt fires (~1–10ms) -> forces entry into kernel -> scheduler runs
+- Timer interrupt fires (~1–10ms) → forces entry into kernel → scheduler runs
 - Time quantum q -> max CPU time a task gets before preemption
 
 **Key metrics:**
