@@ -1,5 +1,7 @@
 Cache Coherence Overhead
-- Multiple cores writing to same memory location or cache line
+- Multiple cores writing to same memory location or cache line (how to sync)
+Memory Consistency Overhead
+- Multiple cores writing to different memory locations (how to maintain order of events)
 
 ### Cache Coherence Properties  
   
@@ -14,6 +16,11 @@ Cache Coherence Overhead
 	→ If X=1 then X=2, no core can see 2 before 1. 
 
 ### Cache Coherence Implementations  
+Intuition
+- If a given core's block is **invalid**:
+	- Reading: fetch memory from data; force other caches to write back any new data first
+- If a given core's block is **valid**:
+	-  It can read from it, but writing to it invalidates all other cores' copies
 
 1. **Snooping-based**  
 - Caches **broadcast and monitor bus**  
