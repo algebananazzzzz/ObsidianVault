@@ -20,3 +20,19 @@ What I would do:
 
 ![[Pasted image 20260305181722.png]]
 
+SKILLS
+- Java, Python, PostgreSQL
+- React Native, Nodejs, TailwindCSS, Figma
+- GitHub Actions
+
+Engineered a pipeline using Liquibase and a custom Golang script to declaratively process 1,000+ rows of data from CSV, saving ~15 man-hours per onboarding cycle, cutting change failure rate from 75% → 5% and optimising MTTR from infinite → 5 minutes
+
+Migrated legacy monolithic systems to AWS microservices, cutting costs by ~86% (from $893 → $120 per annum)
+
+Architected a scalable PostgreSQL DB schema, leveraging indexes and materialised views to minimise query time by est. 65% and incorporated triggers and procedures to enforce business logic
+
+Introduced an automated stable Gale–Shapley CCA allocation system leveraging Golang, reducing manual workload by ~50 man-hours per semester
+
+Led the development of the Sheares App leveraging Figma, React Native and Expo, used by 500 active residents monthly, boosting hall event participation by ~20%
+
+Managed thorough unit and integration testing with Github Actions, and oversaw the deployment of the app on Android and iOS through closed and open testing
