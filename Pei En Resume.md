@@ -25,6 +25,10 @@ SKILLS
 - React Native, Nodejs, TailwindCSS, Figma
 - GitHub Actions
 
+Architected and deployed a scalable dashboarding platform leveraging React and Next.js to support CCA allocation workflows, enabling 500+ CCA chairs and applicants to rank and allocate over 3,000 roles each application cycle.
+
+
+
 Engineered a pipeline using Liquibase and a custom Golang script to declaratively process 1,000+ rows of data from CSV, saving ~15 man-hours per onboarding cycle, cutting change failure rate from 75% → 5% and optimising MTTR from infinite → 5 minutes
 
 Migrated legacy monolithic systems to AWS microservices, cutting costs by ~86% (from $893 → $120 per annum)
