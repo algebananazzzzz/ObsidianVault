@@ -11,14 +11,14 @@ Implemented TDD workflows across 3 repositories with CI/CD gating between isolat
 
 **Frontend / UI/UX Design**
 
-• Refactored the Sheares Intranet frontend, migrating legacy CSS to TailwindCSS + shadcn/ui with a custom design theme, improving maintainability, UI consistency, and development velocity.
+Led development of the Sheares Intranet and App, two core platforms used by 500+ residents, by prototyping UX flows in Figma, migrating legacy CSS to TailwindCSS and shadcn, and establishing a consistent design system across all products.
 
-Led the development of the Sheares App leveraging Figma, React Native and Expo, used by 500 active residents monthly, boosting hall event participation by ~20%
-
-Managed thorough unit and integration testing with Github Actions, and oversaw the deployment of the app on Android and iOS through closed and open testing.
+Eliminated UX anti-patterns by introducing standardized loading and error states, redesigned interfaces to support responsive layouts across devices, achieving 89 on Lighthouse Accessibility score, 0.7s First Contentful Paint by leveraging Next.js SSR, CloudFront CDN, and caching
 
 **Backend SWE**
 
 Built an automated CCA allocation engine in Golang implementing the Gale–Shapley matching algorithm, processing ~3,000 preference rankings across 30+ CCAs and 500+ residents, saving ~180 man-hours per semester.
+
+Built a holiday subsidy management system with a strict multi-stage approval workflow through the Intranet, and developed custom Python pandas pipelines to aggregate datasets and adjust allocation weights under dynamic budget constraints, saving costs by ~40%
 
 Replaced fragmented legacy data stores with a centralized PostgreSQL schema, reducing query latency by ~65% via materialized views; implemented stored procedures to enforce business logic
